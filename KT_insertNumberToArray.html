@@ -11,20 +11,12 @@
 
 <script>
   function insertNumberToArray(arr,x,index){
-    let newarr = []
     if(index <0 || index > arr.length){
-      newarr = arr
+      return arr
     } else {
-      for (let i = 0; i <= arr.length; i++) {
-        if (i < index) {
-          newarr.push(arr[i])
-        } else if(i==index){
-            newarr.push(x)
-        }else {
-            newarr.push(arr[i-1])
-        }
-      }
-    } return newarr
+        arr.splice(index,0,x)
+        return arr
+    }
   }
 
   let arr=[1,2,3,4,5]
